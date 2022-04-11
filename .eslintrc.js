@@ -13,5 +13,6 @@ module.exports = {
     rules: {
         semi: 0,
         indent: [2, 4],
+        'class-methods-use-this': 'off',
     },
 };
