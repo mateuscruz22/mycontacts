@@ -4,18 +4,32 @@ GET {{baseURL}}/contacts HTTP/1.1
 
 ###
 
-GET {{baseURL}}/contacts/aec745b7-0ccd-438e-ac35-a7a2762c73ba HTTP/1.1
+GET {{baseURL}}/contacts/02c14d94-b8eb-4c39-bf21-a49b90df3321 HTTP/1.1
 
 ###
 
-DELETE {{baseURL}}/contacts/aec745b7-0ccd-438e-ac35-a7a2762c73ba HTTP/1.1
+DELETE {{baseURL}}/contacts/02c14d94-b8eb-4c39-bf21-a49b90df3321 HTTP/1.1
 
 ###
 
-POST {{baseURL}}/authentication HTTP/1.1
+POST {{baseURL}}/contacts HTTP/1.1
 Content-Type: application/json
 
 {
-	"useremail": "user@email.com",
-	"password": "password"
+	"name": "Rose",
+	"email": "rose@email.com",
+    "phone": "37945821354",
+    "category_id": "aec745b7-0ccd-438e-ac35-a7a2762c73bam"
+}
+
+###
+
+PUT {{baseURL}}/contacts/02c14d94-b8eb-4c39-bf21-a49b90df3321 HTTP/1.1
+Content-Type: application/json
+
+{
+	"name": "José da Silva",
+    "email": "jose@email.com",
+    "phone": "37935468351",
+    "category_id": "aec745b7-0ccd-438e-ac35-a7a2762c73bam"
 }
