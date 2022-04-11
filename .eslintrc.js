@@ -14,5 +14,6 @@ module.exports = {
         semi: 0,
         indent: [2, 4],
         'class-methods-use-this': 'off',
+        'no-promise-executor-return': 'off',
     },
 };

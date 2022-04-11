@@ -4,6 +4,10 @@ GET {{baseURL}}/contacts HTTP/1.1
 
 ###
 
+GET {{baseURL}}/contacts/1e366780-47cc-4238-a6a1-4ea3194b53be HTTP/1.1
+
+###
+
 POST {{baseURL}}/authentication HTTP/1.1
 Content-Type: application/json
 
