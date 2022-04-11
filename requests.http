@@ -4,7 +4,11 @@ GET {{baseURL}}/contacts HTTP/1.1
 
 ###
 
-GET {{baseURL}}/contacts/1e366780-47cc-4238-a6a1-4ea3194b53be HTTP/1.1
+GET {{baseURL}}/contacts/aec745b7-0ccd-438e-ac35-a7a2762c73ba HTTP/1.1
+
+###
+
+DELETE {{baseURL}}/contacts/aec745b7-0ccd-438e-ac35-a7a2762c73ba HTTP/1.1
 
 ###
 
