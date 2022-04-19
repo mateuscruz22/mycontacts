@@ -18,8 +18,7 @@ Content-Type: application/json
 {
 	"name": "Rose",
 	"email": "rose@email.com",
-    "phone": "37945821354",
-    "category_id": "aec745b7-0ccd-438e-ac35-a7a2762c73bam"
+    "phone": "37945821354"
 }
 
 ###
