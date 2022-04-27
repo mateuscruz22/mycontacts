@@ -4,7 +4,7 @@ GET {{baseURL}}/contacts HTTP/1.1
 
 ###
 
-GET {{baseURL}}/contacts/02c14d94-b8eb-4c39-bf21-a49b90df3321 HTTP/1.1
+GET {{baseURL}}/contacts/90c98f25-e6b7-4176-b936-5f81c1565e00 HTTP/1.1
 
 ###
 

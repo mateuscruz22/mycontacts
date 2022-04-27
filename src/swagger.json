@@ -1,0 +1,191 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "MyContacts' API",
+        "description": "This API aims to handle contacts",
+        "contact": {
+            "email": "mateuscruz22@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Testing API"
+        }
+    ],
+    "paths": {
+        "/contacts": {
+            "post": {
+                "summary": "Contact registration",
+                "description": "This route will be responsible for registering a contact",
+                "tags": ["Contacts"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Contact"
+                            },
+                            "examples": {
+                                "product": {
+                                    "value": {
+                                        "name": "John",
+                                        "email": "john@email.com",
+                                        "phone": "(34) 2796-7456",
+                                        "category_id": "483bf108-c8ca-434f-b758-564eaf3113fa"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Contact"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "summary": "Get all contacts",
+                "description": "This route will be responsible for show all contacts",
+                "tags": ["Contacts"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Contact"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/contacts/{id}": {
+            "get": {
+                "summary": "Get contact by ID",
+                "description": "This route will be responsible for showing a contact by their ID",
+                "tags": ["Contacts"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Contact ID",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Contact"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update contact by ID",
+                "description": "This route will be responsible for update a contact by their ID",
+                "tags": ["Contacts"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Contact ID",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Contact"
+                            },
+                            "examples": {
+                                "product": {
+                                    "value": {
+                                        "name": "John Doe",
+                                        "email": "john@email.com",
+                                        "phone": "(34) 2796-7456",
+                                        "category_id": "8bdf0cab-a4dc-42b9-88a0-400d568093aa"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Contact"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete contact by ID",
+                "description": "This route will be responsible for deleting a contact by their ID",
+                "tags": ["Contacts"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Contact ID",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Contact": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "category_id": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

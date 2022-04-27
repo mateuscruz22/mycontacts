@@ -1,11 +1,17 @@
 const express = require('express')
 require('express-async-errors')
 
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocs = require('./swagger.json')
+
 const routes = require('./routes')
 
 const app = express()
 
 app.use(express.json())
+
+app.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
+
 app.use(routes)
 app.use((error, request, response, next) => {
     console.log(error)
